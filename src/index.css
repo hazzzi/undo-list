@@ -9,19 +9,59 @@
   
   body {
     @apply bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 min-h-screen;
+    /* 모바일 스크롤 부드럽게 */
+    -webkit-overflow-scrolling: touch;
+    /* 모바일에서 탭 하이라이트 색상 */
+    -webkit-tap-highlight-color: rgba(237, 91, 255, 0.2);
+  }
+
+  /* 모바일에서 선택 방지 (UI 요소) */
+  button, .undo-card {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* 입력 필드는 선택 가능 */
+  input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
   }
 }
 
 @layer components {
   .undo-card {
-    @apply bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+    @apply bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 p-4 sm:p-6 transition-all duration-300 hover:shadow-xl;
+    /* 모바일에서는 scale 효과 제거 */
+    @apply hover:scale-100 sm:hover:scale-[1.02];
   }
   
   .undo-button {
-    @apply bg-gradient-to-r from-primary-500 to-pink-500 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+    @apply bg-gradient-to-r from-primary-500 to-pink-500 text-white font-medium px-4 py-3 sm:px-6 rounded-lg transition-all duration-300 hover:shadow-lg;
+    /* 모바일 터치 친화적 크기 */
+    @apply min-h-[44px] hover:scale-100 active:scale-95;
+    /* 터치 디바이스에서 더 부드러운 애니메이션 */
+    @apply active:bg-gradient-to-r active:from-primary-600 active:to-pink-600;
   }
   
   .undo-input {
     @apply w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-200 focus:outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm;
+    /* 모바일 입력 최적화 */
+    @apply text-base min-h-[44px];
+    /* iOS Safari 줌 방지 */
+    font-size: 16px;
+  }
+
+  /* 모바일 터치 타겟 크기 보장 */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+
+  /* 모바일에서 스크롤바 숨기기 */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 } 
