@@ -129,7 +129,6 @@ function App() {
         <div className="text-center mt-12 text-gray-500">
           <p>이 앱은 게으름을 인정하는 사람들에게 바칩니다.</p>
           <p className="font-medium">잘 안했다. 당신은 오늘도 멋졌어요.</p>
-          <p className="text-sm mt-2">— Made with 💛 in Cursor</p>
         </div>
       </div>
     </div>
