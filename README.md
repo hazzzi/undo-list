@@ -6,7 +6,10 @@
 오늘 _안_ 할 일들을 적고, 실제로 안 했을 때 **"잘 안했다! 🎉"** 라는 축하를 받는  
 **게으르지만 힙한 사람들을 위한 생산성 앱**입니다.
 
-![Undo List Screenshot](https://via.placeholder.com/800x400/ed5bff/ffffff?text=🛑+오늘도+안+할+예정)
+## 🌐 라이브 데모
+**👉 [https://hazzzi.github.io/undo-list](https://hazzzi.github.io/undo-list)** 에서 바로 체험해보세요!
+
+![Undo List Screenshot](./example.png)
 
 ---
 
@@ -30,6 +33,7 @@
 | **Tailwind CSS** | 빠르고 유연한 감성 스타일링 |
 | **Vite** | 번개같이 빠른 개발 서버 |
 | **Pretendard** | 한국어 최적화 폰트 |
+| **GitHub Pages** | 자동 배포 및 호스팅 |
 
 ---
 
@@ -38,7 +42,7 @@
 ### 1️⃣ 프로젝트 클론
 
 ```bash
-git clone https://github.com/yourusername/undo-list.git
+git clone https://github.com/hazzzi/undo-list.git
 cd undo-list
 ```
 
@@ -66,12 +70,17 @@ npm run build
 npm run preview
 ```
 
+**✨ 자동 배포**: GitHub에 푸시하면 GitHub Actions가 자동으로 빌드하고 배포합니다!
+
 ---
 
 ## 📁 프로젝트 구조
 
 ```
 undo-list/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml     # GitHub Actions 배포 설정
 ├── src/
 │   ├── App.tsx          # 메인 컴포넌트 (UI와 로직)
 │   ├── store.ts         # Zustand 상태 관리

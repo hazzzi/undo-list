@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "오늘도 안 할 예정 - 게으르지만 힙한 사람들을 위한 생산성 앱",
   "private": true,
+  "homepage": "https://hazzzi.github.io/undo-list",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
